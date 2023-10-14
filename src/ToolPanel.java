@@ -10,7 +10,7 @@ public class ToolPanel {
     public ToolPanel(DrawingCanvas drawingCanvas) {
         // Create ToolPanel container and set layout
         panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBackground(new Color(0xcfd8dc)); // Set background color to #607d8b
 
 
@@ -35,6 +35,18 @@ public class ToolPanel {
             }
         });
 
+        // Add brush size buttons
+        JButton smallBrushButton = new JButton("Small Brush");
+        JButton mediumBrushButton = new JButton("Medium Brush");
+        JButton largeBrushButton = new JButton("Large Brush");
+
+        smallBrushButton.addActionListener(e -> drawingCanvas.setBrushSize(2));
+        mediumBrushButton.addActionListener(e -> drawingCanvas.setBrushSize(5));
+        largeBrushButton.addActionListener(e -> drawingCanvas.setBrushSize(15));
+
+        panel.add(smallBrushButton);
+        panel.add(mediumBrushButton);
+        panel.add(largeBrushButton);
     }
 
 

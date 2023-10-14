@@ -6,7 +6,6 @@ public class DrawApp {
         // create frame
         JFrame frame = new JFrame();
         frame.setLayout(new BorderLayout()); // Change the layout manager to BorderLayout
-        frame.setBackground(new Color(0x263238));
 
         // set initial frame specifications
         frame.setSize(800, 600);
@@ -15,10 +14,17 @@ public class DrawApp {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        // create DrawingCanvas and add to panel
+        // create DrawingCanvas
         DrawingCanvas drawingCanvas = new DrawingCanvas();
         drawingCanvas.setBackground(Color.white);
-        frame.add(drawingCanvas, BorderLayout.CENTER);
+
+        // Create canvas wrapper for padding, add to frame
+        JPanel canvasWrapper = new JPanel();
+        canvasWrapper.setLayout(new BorderLayout());
+        canvasWrapper.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        canvasWrapper.add(drawingCanvas);
+        canvasWrapper.setBackground(new Color(0x263238));
+        frame.add(canvasWrapper, BorderLayout.CENTER);
 
         // create ToolPanel and add to panel
         ToolPanel toolPanel = new ToolPanel(drawingCanvas);
