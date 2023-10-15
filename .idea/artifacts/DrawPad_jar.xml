@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DrawPad:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="DrawPad.jar">
+      <element id="module-output" name="DrawPad" />
+    </root>
+  </artifact>
+</component>

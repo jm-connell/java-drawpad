@@ -17,14 +17,7 @@ public class DrawApp {
         // create DrawingCanvas
         DrawingCanvas drawingCanvas = new DrawingCanvas();
         drawingCanvas.setBackground(Color.white);
-
-        // Create canvas wrapper for padding, add to frame
-        JPanel canvasWrapper = new JPanel();
-        canvasWrapper.setLayout(new BorderLayout());
-        canvasWrapper.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        canvasWrapper.add(drawingCanvas);
-        canvasWrapper.setBackground(new Color(0x263238));
-        frame.add(canvasWrapper, BorderLayout.CENTER);
+        frame.add(drawingCanvas, BorderLayout.CENTER);
 
         // create ToolPanel and add to panel
         ToolPanel toolPanel = new ToolPanel(drawingCanvas);

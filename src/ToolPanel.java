@@ -11,16 +11,7 @@ public class ToolPanel {
         // Create ToolPanel container and set layout
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setBackground(new Color(0xcfd8dc)); // Set background color to #607d8b
-
-
-        /*
-            Create tools and add to ToolPanel
-         */
-
-        // Add color chooser
-        /* ColorChooser colorPicker = new ColorChooser();
-           panel.add(colorPicker.getColorChooser()); */
+        panel.setBackground(new Color(0x536878)); // Set background color to #607d8b
 
         // Add erase button
         JButton eraseButton = new JButton("Erase Canvas");
@@ -47,6 +38,22 @@ public class ToolPanel {
         panel.add(smallBrushButton);
         panel.add(mediumBrushButton);
         panel.add(largeBrushButton);
+
+        // Add color chooser dialog box button
+        JButton colorChooserButton = new JButton("Choose Color");
+        panel.add(colorChooserButton);
+
+        // Logic for color chooser
+        colorChooserButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color selectedColor = JColorChooser.showDialog(panel, "Choose Brush Color", drawingCanvas.getBrushColor());
+                if (selectedColor != null) {
+                    drawingCanvas.setBrushColor(selectedColor);
+                }
+            }
+        });
+
     }
 
 
