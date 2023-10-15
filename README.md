@@ -4,7 +4,7 @@ This project is a simple drawing application written in Java using the Swing GUI
 
 I wrote this program as a way to learn about Java, with a focus on object, classes, and methods.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/E2fkMKGGMnQ)
 
 # Development Environment
 This project was developed using IntelliJ IDEA. The GUI was built entirely using Swing, with some use of the Graphics2D class to control the brush sizes.
